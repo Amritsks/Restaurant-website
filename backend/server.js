@@ -14,7 +14,13 @@ const app = express();
 // ---------------------------
 // Middleware
 // ---------------------------
-app.use(cors());
+const corsOptions = {
+  origin: 'https://restaurant-website-psi-tawny.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api/orders", orderRoutes);
 
