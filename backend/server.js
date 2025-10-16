@@ -73,16 +73,16 @@ app.post("/api/suggestions", async (req, res) => {
 // ---------------------------
 // Serve React Frontend (dist)
 // ---------------------------
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-const distPath = path.join(__dirname, "../dist");  
-app.use(express.static(distPath));
+// const distPath = path.join(__dirname, "../dist");  
+// app.use(express.static(distPath));
 
-// ✅ FIX: use regex instead of "/*"
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
-});
+// // ✅ FIX: use regex instead of "/*"
+// app.get(/.*/, (req, res) => {
+//   res.sendFile(path.join(distPath, "index.html"));
+// });
 
 
 // ---------------------------
